@@ -19,10 +19,11 @@ Item {
         anchors.centerIn: parent
         source: "../assets/ribbon.svg"
         fillMode: Image.PreserveAspectFit
-        width: (parentImageWidth * 0.75) > 125 ? 125 : parentImageWidth * 0.75
+        width: completedTxt.width + vpx(35)
     }
 
     Text {
+        id: completedTxt
         anchors {
             centerIn: completedbg
             verticalCenterOffset: vpx(-3)
