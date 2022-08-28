@@ -110,19 +110,6 @@ FocusScope {
         }
     }
 
-    // Background image
-    BackgroundImage {
-        id: backgroundimage
-        game: currentGame
-        anchors {
-            left: parent.left
-            right: parent.right
-            top: parent.top
-            bottom: parent.bottom
-        }
-        opacity: 0.255
-    }
-
     // Skewed background
     Rectangle {
         id: skew_color
