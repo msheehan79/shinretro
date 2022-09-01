@@ -291,7 +291,7 @@ FocusScope {
                                 spacing: vpx(5)
                                 // RATING
                                 RatingStars {
-                                    readonly property var rating: (currentGame.rating *5).toFixed(1)
+                                    readonly property var rating: (currentGame.rating * 5).toFixed(1)
                                 }
                             }
 
@@ -309,7 +309,7 @@ FocusScope {
 
                                     Text {
                                         id: txt_players
-                                        property var convertPlayer: currentGame.players > 1 ? "1-"+currentGame.players+" "+dataText[lang].games_players : dataText[lang].games_player
+                                        property var convertPlayer: currentGame.players > 1 ? "1-" + currentGame.players + " " + dataText[lang].games_players : dataText[lang].games_player
                                         anchors.centerIn: parent
                                         text: convertPlayer
                                         font {
