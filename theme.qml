@@ -1087,6 +1087,7 @@ FocusScope {
             // If there is only one collection category there is nothing to switch
             if (collectionTypes.length > 1) {
                 var index = collectionTypes.indexOf(collectionType) + 1;
+                currentCollectionIndex = 0;
                 collectionType = (index < collectionTypes.length) ? collectionTypes[index] : collectionTypes[0];
                 currentCollectionIndex = api.memory.get("currentCollectionIndex-" + collectionType) || 0;
                 games.currentGameIndex = 0;
