@@ -59,7 +59,7 @@ FocusScope {
         source: "assets/fonts/glyphs.ttf";
     }
     // Control schemes
-    property variant osdScheme: {
+    property var osdScheme: {
         "Universal": {
             BTND: glyphs.uInputBtnD,
             BTNL: glyphs.uInputBtnL,
@@ -112,7 +112,7 @@ FocusScope {
         }
     }
     // Color schemes
-    property variant colorScheme: {
+    property var colorScheme: {
         "Dark": {
             main: "#202335",
             secondary: "#1C1E2E",
@@ -208,7 +208,7 @@ FocusScope {
     }
 
     // Text strings
-    property variant dataText: {
+    property var dataText: {
         "en": {
             settings_collection_accentColor_dimm: "dimm",
             settings_collection_accentColor_bright: "bright",
@@ -603,7 +603,7 @@ FocusScope {
     property int currentCollectionIndex: api.memory.get("currentCollectionIndex-" + collectionType) || 0
     property var currentCollection: allCollections[currentCollectionIndex]
 
-    property variant dataMenu: [
+    property var dataMenu: [
         { name: "settings", title: dataText[lang].menu_settings},
         { name: "home", title: dataText[lang].menu_home},
         { name: "collections", title: dataText[lang].menu_collections},
@@ -614,7 +614,7 @@ FocusScope {
         return dataLaunchbox[shortname] ? dataLaunchbox[shortname] : shortname
     }
 
-    property variant dataLaunchbox: {
+    property var dataLaunchbox: {
         "amstrad cpc" :                             "amstradcpc",
         "apple ii" :                                "apple2",
         "atari 2600" :                              "atari2600",
@@ -675,7 +675,7 @@ FocusScope {
         "sgfx":                                     "supergrafx"
     }
 
-    property variant dataManufacturers: {
+    property var dataManufacturers: {
         "acorn":               { color: "#FFFFFF" },
         "amstrad":             { color: "#FFFFFF" },
         "apf":                 { color: "#FFFFFF" },
@@ -719,7 +719,7 @@ FocusScope {
     }
 
     // Additional data to display manufacturers and release dates
-    property variant dataConsoles: {
+    property var dataConsoles: {
         "default":            { manufacturer: null,            release: null,   color: "#000000", altColor: "#303030", altColor2: "#B8B8B8", fullName: "Default"   },
         "all":                { manufacturer: null,            release: null,   color: "#851740", altColor: "#6D1234", altColor2: "#364792", fullName: "All Games"   },
         "lastplayed":         { manufacturer: null,            release: null,   color: "#FFFFFF", altColor: "#E6E6E6", altColor2: "#CDCDCD", fullName: "Last Played"   },
