@@ -16,7 +16,7 @@ Key features/changes to the base theme (some of these will likely be incorporate
  - Page up/Page down can be configured via settings to either skip to next/previous collection when in the game grid view (default), or can instead be used to rapidly scroll up/down the games list for quicker navigation of large collections
  - The collections carousel now supports press & hold to quickly scroll through the list
  - Several updates to improve performance so no stutters or delays when scrolling through collections or games, or loading the theme etc
- - Added some JS color detection to render the game title, year and detail text as either dark or light depending on the background to ensure readability
+ - Will automatically render the game title, year and detail text as either dark or light color depending on the background color to ensure readability in all configurations
 
 **New Features**
 - Dedicated Last Played + Favorites collections can be enabled or disabled via Settings menu
