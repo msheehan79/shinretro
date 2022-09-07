@@ -278,6 +278,7 @@ FocusScope {
             settings_general_hideOSC: "Hide controls",
             settings_general_dynamicFontScaling: "Dynamic font scaling",
             settings_general_OSCScheme: "Controls scheme",
+            settings_global_backgroundImg: "Background image",
             settings_global_videoPlayback: "Video playback",
             settings_global_videoMute: "Mute video",
             settings_collection_showAll: 'Show "All games" collection',
@@ -346,6 +347,7 @@ FocusScope {
             settings_general_hideOSC: "Steuerung ausblenden",
             settings_general_dynamicFontScaling: "Dynamische Schriftskalierung",
             settings_general_OSCScheme: "Steuerungschema",
+            settings_global_backgroundImg: "Hintergrundbild",
             settings_global_videoPlayback: "Videowiedergabe",
             settings_global_videoMute: "Video stummschalten",
             settings_collection_showAll: 'Sammlung "Alle Spiele" anzeigen',
@@ -414,6 +416,7 @@ FocusScope {
             settings_general_hideOSC: "Masquer les contrôles",
             settings_general_dynamicFontScaling: "Mise à l'échelle dynamique des polices",
             settings_general_OSCScheme: "Style des contrôles",
+            settings_global_backgroundImg: "Image de fond",
             settings_global_videoPlayback: "Activer les vidéos",
             settings_global_videoMute: "Désactiver le son des vidéos",
             settings_collection_showAll: 'Afficher la collection "Tous"',
@@ -482,6 +485,7 @@ FocusScope {
             settings_general_hideOSC: "Ocultar controles",
             settings_general_dynamicFontScaling: "Dynamic font scaling",
             settings_general_OSCScheme: "Estilo de controle",
+            settings_global_backgroundImg: "Imagem de fundo",
             settings_global_videoPlayback: "Reprodução de vídeo",
             settings_global_videoMute: "Silenciar vídeo",
             settings_collection_showAll: 'Mostrar a coleção "Todos jogos"',
@@ -582,6 +586,7 @@ FocusScope {
     property int gamesGridIPR: api.memory.get('gamesGridIPR') || 4
     property int gamesGridVR: api.memory.get('gamesGridVR') || 1
     property string gamesPgUpDownFunction: api.memory.get('gamesPageUpDownFunction') || 'Collections'
+    property int gamesBGImg: api.memory.get('gamesBGImgIndex') || 0
     property int gamesVideo: api.memory.get('gamesVideoIndex') || 0
     property bool gamesVideoMute: {
         if (api.memory.get('gamesVideoMuteIndex') == "1") {
