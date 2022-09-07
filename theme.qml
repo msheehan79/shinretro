@@ -56,6 +56,13 @@ FocusScope {
         property string spinner: '\ue839';
         property string disabled: '\uf204';
         property string enabled: '\uf205';
+        property string favoriteBG: '\ue821';
+        property string uInputBtnStart: '\ue81d';
+        property string uInputBtnSelect: '\ue81e';
+        property string xInputBtnStart: '\ue81f';
+        property string xInputBtnSelect: '\ue820';
+        property string pInputBtnStart: '\ue822';
+        property string pInputBtnSelect: '\ue823';
         source: "assets/fonts/glyphs.ttf";
     }
     // Control schemes
@@ -68,7 +75,9 @@ FocusScope {
             BTNR: glyphs.uInputBtnR,
             BTNRB: glyphs.uInputBtnRb,
             BTNRT:glyphs.uInputBtnRt,
-            BTNU: glyphs.uInputBtnU
+            BTNU: glyphs.uInputBtnU,
+            BTNStart: glyphs.uInputBtnStart,
+            BTNSelect: glyphs.uInputBtnSelect
         },
         "Universal-JP": {
             BTND: glyphs.uInputBtnR,
@@ -78,7 +87,9 @@ FocusScope {
             BTNR: glyphs.uInputBtnD,
             BTNRB: glyphs.uInputBtnRb,
             BTNRT:glyphs.uInputBtnRt,
-            BTNU: glyphs.uInputBtnL
+            BTNU: glyphs.uInputBtnL,
+            BTNStart: glyphs.uInputBtnStart,
+            BTNSelect: glyphs.uInputBtnSelect
         },
         "XBOX": {
             BTND: glyphs.xInputBtnD,
@@ -88,7 +99,9 @@ FocusScope {
             BTNR: glyphs.xInputBtnR,
             BTNRB: glyphs.xInputBtnRb,
             BTNRT:glyphs.xInputBtnRt,
-            BTNU: glyphs.xInputBtnU
+            BTNU: glyphs.xInputBtnU,
+            BTNStart: glyphs.xInputBtnStart,
+            BTNSelect: glyphs.xInputBtnSelect
         },
         "PS": {
             BTND: glyphs.pInputBtnD,
@@ -98,7 +111,9 @@ FocusScope {
             BTNR: glyphs.pInputBtnR,
             BTNRB: glyphs.pInputBtnRb,
             BTNRT:glyphs.pInputBtnRt,
-            BTNU: glyphs.pInputBtnU
+            BTNU: glyphs.pInputBtnU,
+            BTNStart: glyphs.pInputBtnStart,
+            BTNSelect: glyphs.pInputBtnSelect
         },
         "PS-JP": {
             BTND: glyphs.pInputBtnR,
@@ -108,7 +123,9 @@ FocusScope {
             BTNR: glyphs.pInputBtnD,
             BTNRB: glyphs.pInputBtnRb,
             BTNRT:glyphs.pInputBtnRt,
-            BTNU: glyphs.pInputBtnL
+            BTNU: glyphs.pInputBtnL,
+            BTNStart: glyphs.pInputBtnStart,
+            BTNSelect: glyphs.pInputBtnSelect
         }
     }
     // Color schemes
