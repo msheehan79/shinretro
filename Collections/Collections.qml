@@ -149,7 +149,6 @@ FocusScope {
                     event.accepted = true;
                     playAcceptSound();
                     currentMenuIndex = 3;
-                    saveCurrentCollectionState(collectionType, currentCollectionIndex);
                     return;
                 }
 
@@ -196,6 +195,7 @@ FocusScope {
                     if (!event.isAutoRepeat) {
                         event.accepted = true;
                         games.currentGameIndex = 0;
+                        saveCurrentCollectionState(collectionType, currentCollectionIndex);
                         return;
                     }
                 }
