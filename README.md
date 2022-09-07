@@ -1,6 +1,32 @@
 <img src="assets/logo_shinretro.png" width="55%" title="shinretro logo" />
 
-# shinretro
+# shinretro-custom
+
+A modified version of the excellent Shinretro theme, with several performance fixes, new features and some personal preference-type updates (theme art, logos, favorite icon etc)
+
+Key features/changes to the base theme (some of these will likely be incorporated into upstream as well, but noting here for reference and guidance:
+
+**Personal preference changes**
+ - Changed favorites icon to use the icon and design from the gameOS theme (https://github.com/PlayingKarrde/gameOS)
+ - Changed the currently selected game border to use a color cycle animation to make it more clear. The color of the border can either be consistent across the color theme, or can change based on the particular collection (settings option)
+ - Manufacturer logo shown on the Collections screen uses a different look + feel
+
+**Usability/Performance Adjustments**
+ - Page up/Page down can be configured via settings to either skip to next/previous collection when in the game grid view (default), or can instead be used to rapidly scroll up/down the games list for quicker navigation of large collections
+ - The collections carousel now supports press & hold to quickly scroll through the list
+ - Several updates to improve performance so no stutters or delays when scrolling through collections or games, or loading the theme etc
+
+**New Features**
+- Dedicated Last Played + Favorites collections can be enabled or disabled via Settings menu
+- Collection Category support (requires custom metadata, will be detailed below soon) - able to group collections into Categories - use the Filters key to toggle each category in the collections view
+- Collection Sorting - Use the Select/Back button on the controller to toggle sorting game grid by Title/Last Played/Favorite/Genre or Rating.
+- Custom Sorting (requires custom metadata, will be detailed below soon) - define a custom sort order for specific collections based on game metadata values
+- Completed Game Ribbon (requires custom metadata, will be detailed below soon) - Adds a "Completed" ribbon to games you've marked as complete in your game metadata
+- Arcade Port tag (requires custom metadata, will be detailed below soon) - Adds an "Arcade Port" icon to the games detail view if you've marked the game as an arcade port in your game metadata
+
+WIP - More to come as I think of it and will include details on the custom metadata needed for some of the above features.
+
+----------------
 
 Current Version: [0.138](CHANGELOG.md) [![GPLv3 license](https://img.shields.io/badge/license-GPLv3-blue.svg)](LICENSE)
 
