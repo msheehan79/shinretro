@@ -130,6 +130,7 @@ Item {
             CompletedIcon {
                 id: completedicon
                 parentImageWidth: screenshot.width
+                z: 15
             }
         }
     }
