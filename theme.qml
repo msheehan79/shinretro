@@ -271,6 +271,7 @@ FocusScope {
             settings_general_restart: "(Requires restart)",
             settings_general_language: "Language",
             settings_general_colorScheme: "Color scheme",
+            settings_general_selectionFrame: "Selection frame color",
             settings_general_music: "Music",
             settings_general_muteSounds: "Mute sounds",
             settings_general_logoVariant: "Logo variation",
@@ -340,6 +341,7 @@ FocusScope {
             settings_general_restart: "(Benötigt Neustart)",
             settings_general_language: "Sprache",
             settings_general_colorScheme: "Farbschema",
+            settings_general_selectionFrame: "Farbe des Auswahlrahmens",
             settings_general_music: "Musik",
             settings_general_muteSounds: "Töne stummschalten",
             settings_general_logoVariant: "Logo-Variation",
@@ -409,6 +411,7 @@ FocusScope {
             settings_general_restart: "(Redémarrage nécessaire)",
             settings_general_language: "Langue",
             settings_general_colorScheme: "Style de couleur",
+            settings_general_selectionFrame: "Couleur de la grille de sélection",
             settings_general_music: "Musique",
             settings_general_muteSounds: "Désactiver le son",
             settings_general_logoVariant: "Style des logos",
@@ -478,6 +481,7 @@ FocusScope {
             settings_general_restart: "(Requer reinício)",
             settings_general_language: "Idioma",
             settings_general_colorScheme: "Estilo de cores",
+            settings_general_selectionFrame: "Cor da moldura de selecção",
             settings_general_music: "Música",
             settings_general_muteSounds: "Silenciar sons",
             settings_general_logoVariant: "Estilo de logos",
@@ -536,6 +540,7 @@ FocusScope {
     property string region: api.memory.get('region') || "pal"
     property string controlScheme: api.memory.get('controlScheme') || "Universal"
     property int osc: api.memory.get('oscIndex') || 0
+    property int selectionFrame: api.memory.get('selectionFrameIndex') || 0
     property double fontScalingFactor: {
         if (api.memory.get('dynamicFontScalingIndex') == "1") {
             if ((Math.round(Screen.pixelDensity * 10) / 100) >= 1.5)
