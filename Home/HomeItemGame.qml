@@ -14,7 +14,6 @@ Item {
             return accentColorNr != 0 ? dataConsoles["default"].altColor : dataConsoles["default"].altColor2
         }
     }
-    readonly property double selectedScale: 1.05
 
     signal activated
     signal highlighted
