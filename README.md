@@ -133,7 +133,7 @@ To use this feature, add a new field 'x-completed' to your game metadata with a 
 
 <img src="assets/screenshot/completed.png" title="completed ribbon" />
 
-## Example Metadata Files with custom metadata added
+## Example Metadata Files with Custom Metadata added
 An example of a collection and a game entry with the custom metadata this theme can use if they are included. None of the custom metadata is required to use the theme, they are only enhancements if added.
 
 Collection example with Collection Type added:
@@ -142,6 +142,22 @@ Collection example with Collection Type added:
     shortname: acecombat
     sort-by: Ace Combat
     x-collectiontype: Series
+
+Game example with custom fields added for Completed, Arcade Port:
+> 
+    game: Altered Beast
+    file: roms\amiga\AlteredBeast_v2.0_0819.lha
+    sort-title: Altered Beast
+    release: 1989
+    developer: Sega
+    publisher: Sega
+    genre: Action
+    players: 2
+    x-system: amiga
+    rating: 0.8
+    description: You are a hero raised from the dead by the god Zeus to rescue his daughter Athena. With scenery inspired by Ancient Greece, you have to fight hordes of undead and demons, with a boss at the end of each level until you meet the god Neff, who holds the girl captive.    The Altered Beast title refers to your shapeshifting abilities. In this platformer, you can collect spirit balls by defeating two-headed wolves, allowing you to mutate into different beasts such as a werewolf, a dragon, a tiger, a bear and others depending on the version. Each form, tied to a level, comes with special abilities such as flight and powerful attacks, easily superseding the basic set of punches and kicks in your human form.    The game can be played in single player mode, or in same-screen multiplayer co-op mode.
+    x-completed: False
+    x-arcadeport: True
 
 ## Work in progress
 - [ ] clean the code...
