@@ -20,10 +20,10 @@ Key features/changes to the base theme (some of these will likely be incorporate
 
 **New Features**
 - Dedicated Last Played + Favorites collections can be enabled or disabled via Settings menu
-- Collection Category support (requires custom metadata, will be detailed below soon) - able to group collections into Categories - use the Filters key to toggle each category in the collections view
+- Collection Category support (requires custom metadata, detaileded below) - able to group collections into Categories - use the Filters key to toggle each category in the collections view
 - Collection Sorting - Use the Select/Back button on the controller to toggle sorting game grid by Title/Last Played/Favorite/Genre or Rating.
 - Custom Sorting (requires custom metadata, will be detailed below soon) - define a custom sort order for specific collections based on game metadata values
-- Completed Game Ribbon (requires custom metadata, will be detailed below soon) - Adds a "Completed" ribbon to games you've marked as complete in your game metadata
+- Completed Game Ribbon (requires custom metadata, detaileded below) - Adds a "Completed" ribbon to games you've marked as complete in your game metadata
 - Arcade Port tag (requires custom metadata, detailed below) - Adds an "Arcade Port" icon to the games detail view if you've marked the game as an arcade port in your game metadata
 
 WIP - More to come as I think of it and will include details on the custom metadata needed for some of the above features.
@@ -53,6 +53,7 @@ Forked from [Valentin MEZIN](https://github.com/valsou)'s theme [neoretrō](http
   <img src="assets/screenshot/settings_ozonedark.png" title="settings" />
   <img src="assets/screenshot/arcade_port.png" title="arcade port flag" />
   <img src="assets/screenshot/completed.png" title="completed ribbon" />
+  <img src="assets/screenshot/collectiontypes.png" title="collection types" />
 </details>
 
 ***
@@ -107,6 +108,14 @@ You can find explanations for the theme settings [here](SETTINGS.md).
     collection: Sony Playstation 2
     shortname: ps2
     assets.video: media/videos/default.mp4
+
+## Collection Categories
+Group your collections into categories, for example by System, Series, Genre etc.
+If you add a category field to your collection metadata files, the theme will allow you to switch between categories on the collection carousel screen by using the Filter button
+
+To use this feature, add a new field 'x-collectiontype' to your collection metadata with the category you want to assign for that collection.
+
+<img src="assets/screenshot/collectiontypes.png" title="collection types" />
 
 ## Arcade Port flag
 If a game is tagged as an Arcade Port, the theme will add an Arcade Port tag to the details view, next to the Players and Genre tags.
