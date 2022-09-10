@@ -100,7 +100,9 @@ You can find explanations for the theme settings [here](SETTINGS.md).
 - wheel
 - background
 - video
-- arcade port (custom metadata)
+- arcade port (custom metadata field)
+- completed (custom metadata field)
+- collection type (custom metadata field on collection)
 
 ## Regarding videos on collection screen
 > NOTE: Videos for the collection screen are not included in the theme. You can provide them by setting a default video for your collection in the Pegasus metadata of the collection. EXAMPLE:
@@ -130,6 +132,16 @@ If you want to track which games you have finished, the theme can display a "Com
 To use this feature, add a new field 'x-completed' to your game metadata with a value of 'True'.
 
 <img src="assets/screenshot/completed.png" title="completed ribbon" />
+
+## Example Metadata Files with custom metadata added
+An example of a collection and a game entry with the custom metadata this theme can use if they are included. None of the custom metadata is required to use the theme, they are only enhancements if added.
+
+Collection example with Collection Type added:
+> 
+    collection: Ace Combat
+    shortname: acecombat
+    sort-by: Ace Combat
+    x-collectiontype: Series
 
 ## Work in progress
 - [ ] clean the code...
