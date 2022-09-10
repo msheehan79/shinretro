@@ -24,7 +24,7 @@ Key features/changes to the base theme (some of these will likely be incorporate
 - Collection Sorting - Use the Select/Back button on the controller to toggle sorting game grid by Title/Last Played/Favorite/Genre or Rating.
 - Custom Sorting (requires custom metadata, will be detailed below soon) - define a custom sort order for specific collections based on game metadata values
 - Completed Game Ribbon (requires custom metadata, will be detailed below soon) - Adds a "Completed" ribbon to games you've marked as complete in your game metadata
-- Arcade Port tag (requires custom metadata, will be detailed below soon) - Adds an "Arcade Port" icon to the games detail view if you've marked the game as an arcade port in your game metadata
+- Arcade Port tag (requires custom metadata, detailed below) - Adds an "Arcade Port" icon to the games detail view if you've marked the game as an arcade port in your game metadata
 
 WIP - More to come as I think of it and will include details on the custom metadata needed for some of the above features.
 
@@ -51,6 +51,7 @@ Forked from [Valentin MEZIN](https://github.com/valsou)'s theme [neoretrō](http
   <img src="assets/screenshot/settings_dark.png" title="settings" />
   <img src="assets/screenshot/settings_light.png" title="settings" />
   <img src="assets/screenshot/settings_ozonedark.png" title="settings" />
+  <img src="assets/screenshot/arcade_port.png" title="arcade port flag" />
 </details>
 
 ***
@@ -97,6 +98,7 @@ You can find explanations for the theme settings [here](SETTINGS.md).
 - wheel
 - background
 - video
+- arcade port (custom metadata)
 
 ## Regarding videos on collection screen
 > NOTE: Videos for the collection screen are not included in the theme. You can provide them by setting a default video for your collection in the Pegasus metadata of the collection. EXAMPLE:
@@ -104,6 +106,13 @@ You can find explanations for the theme settings [here](SETTINGS.md).
     collection: Sony Playstation 2
     shortname: ps2
     assets.video: media/videos/default.mp4
+
+## Arcade Port flag
+If a game is tagged as an Arcade Port, the theme will add an Arcade Port tag to the details view, next to the Players and Genre tags.
+
+To use this feature, add a field 'x-arcadeport' to your metadata file with a value of 'True'.
+
+<img src="assets/screenshot/arcade_port.png" title="arcade port flag" />
 
 ## Work in progress
 - [ ] clean the code...
