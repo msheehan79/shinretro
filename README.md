@@ -52,6 +52,7 @@ Forked from [Valentin MEZIN](https://github.com/valsou)'s theme [neoretrō](http
   <img src="assets/screenshot/settings_light.png" title="settings" />
   <img src="assets/screenshot/settings_ozonedark.png" title="settings" />
   <img src="assets/screenshot/arcade_port.png" title="arcade port flag" />
+  <img src="assets/screenshot/completed.png" title="completed ribbon" />
 </details>
 
 ***
@@ -110,9 +111,16 @@ You can find explanations for the theme settings [here](SETTINGS.md).
 ## Arcade Port flag
 If a game is tagged as an Arcade Port, the theme will add an Arcade Port tag to the details view, next to the Players and Genre tags.
 
-To use this feature, add a field 'x-arcadeport' to your metadata file with a value of 'True'.
+To use this feature, add a new field 'x-arcadeport' to your game metadata with a value of 'True'.
 
 <img src="assets/screenshot/arcade_port.png" title="arcade port flag" />
+
+## Completed Ribbon
+If you want to track which games you have finished, the theme can display a "Completed" ribbon on the grid view if a game has been marked as completed.
+
+To use this feature, add a new field 'x-completed' to your game metadata with a value of 'True'.
+
+<img src="assets/screenshot/completed.png" title="completed ribbon" />
 
 ## Work in progress
 - [ ] clean the code...
