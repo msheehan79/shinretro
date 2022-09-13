@@ -102,6 +102,7 @@ You can find explanations for the theme settings [here](SETTINGS.md).
 - video
 - arcade port (custom metadata field)
 - completed (custom metadata field)
+- custom sort order(s) (custom metadata field)
 - collection type (custom metadata field on collection)
 
 ## Regarding videos on collection screen
@@ -138,7 +139,8 @@ This theme supports custom sorting for collections. Say for example you want to 
 
 The default sort-by metadata field would allow you to set a sort title but then this would apply to every collection a particular game shows up in, so if you had a "Mario" series collection and adjusted your sort-by field to set the order, games might show up in the wrong place in your "NES" system collection.
 
-To use this feature, for every game you want to use custom sorting, add a new field to your game metadata in the following format: 'x-customsort-*collectionshortname*': *sortnumber*
+To use this feature, for every game you want to use custom sorting, add a new field to your game metadata in the following format: 
+'x-customsort-*collectionshortname*': *sortnumber*
 
 So for this example lets say we want to display a custom sort that lists all Mario games, and we want to show the games in chronological order but group any rereleases with the original (so Super Mario Bros for NES should come first, then the Game Boy Color and Game Boy Advance rereleases, followed by Super Mario Bros 2 for NES and then Super Mario Advance etc).
 
