@@ -135,7 +135,7 @@ Item {
                     weight: Font.Medium
                     pixelSize: vpx(16 * fontScalingFactor)
                 }
-                color: colorScheme[theme].text
+                color: colorScheme[theme].textlight
                 horizontalAlignment : Text.AlignHCenter
                 verticalAlignment : Text.AlignVCenter
                 wrapMode: Text.Wrap
