@@ -969,7 +969,18 @@ FocusScope {
         "xbox360":            { manufacturer: "microsoft",     release: "2005", color: "#97CA43", altColor: "#82B332", altColor2: "#9D9FA2", fullName: "Xbox 360"  },
         "zmachine":           { manufacturer: "infocom",       release: "1979", color: "#97CA43", altColor: "#82B332", altColor2: "#9D9FA2", fullName: "Z-machine"  },
         "zx81":               { manufacturer: "sinclair",      release: "1981", color: "#000000", altColor: "#1A1A1A", altColor2: "#FFFFFF", fullName: "ZX81"  },
-        "zxspectrum":         { manufacturer: "sinclair",      release: "1982", color: "#D6A763", altColor: "#CF974A", altColor2: "#000000", fullName: "ZX Spectrum"  }
+        "zxspectrum":         { manufacturer: "sinclair",      release: "1982", color: "#D6A763", altColor: "#CF974A", altColor2: "#000000", fullName: "ZX Spectrum"  },
+        "19xx":               { manufacturer: null,            release: null,   color: "#7DC04D", altColor: "#639F38", altColor2: "#93D1E0", fullName: "19XX"  },
+        "advisland":          { manufacturer: null,            release: null,   color: "#5AB309", altColor: "#488F07", altColor2: "#F7E715", fullName: "Adventure Island"  },
+        "aero":               { manufacturer: null,            release: null,   color: "#02A4F1", altColor: "#0283C1", altColor2: "#B8B8B8", fullName: "Aero Fighters"  },
+        "alexkidd":           { manufacturer: null,            release: null,   color: "#FFC412", altColor: "#DAA400", altColor2: "#47A0D8", fullName: "Alex Kidd"  },
+        "altered":            { manufacturer: null,            release: null,   color: "#1B7DF5", altColor: "#0963D0", altColor2: "#12BDFE", fullName: "Altered Beast"  },
+        "barbie":             { manufacturer: null,            release: null,   color: "#FF8CDF", altColor: "#FF3DC9", altColor2: "#E1D05B", fullName: "Barbie"  },
+        "batman":             { manufacturer: null,            release: null,   color: "#000000", altColor: "#303030", altColor2: "#FDE311", fullName: "Batman"  },
+        "btime":              { manufacturer: null,            release: null,   color: "#EA0001", altColor: "#BB0001", altColor2: "#FFFF01", fullName: "BurgerTime"  },
+        "centipede":          { manufacturer: null,            release: null,   color: "#08A704", altColor: "#068603", altColor2: "#FFFF10", fullName: "Centipede"  },
+        "crazytaxi":          { manufacturer: null,            release: null,   color: "#FFD900", altColor: "#CCAE00", altColor2: "#000000", fullName: "Crazy Taxi"  },
+        "lemmings":           { manufacturer: null,            release: null,   color: "#45AA20", altColor: "#37881A", altColor2: "#553FA1", fullName: "Lemmings"  }
     }
 
     // Define Last Played and Favorites collections
