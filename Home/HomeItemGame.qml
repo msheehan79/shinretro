@@ -138,12 +138,13 @@ Item {
             smooth: true
             visible: !gameData.assets.marquee || doubleFocus
             z: 10
+            opacity: !gameData.missing ? 1.0 : 0.65
         }
 
         Rectangle {
             id: regborder
             anchors.fill: parent
-            color: "transparent"
+            color: !gameData.missing ? "transparent" : "white"
             anchors.rightMargin: 1
             anchors.leftMargin: 1
             anchors.bottomMargin: 1

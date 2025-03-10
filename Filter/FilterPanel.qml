@@ -7,6 +7,7 @@ FocusScope {
     property alias withTitle: itemTitle.text
     property alias withMultiplayer: itemMultiplayer.checked
     property alias withFavorite: itemFavorite.checked
+    property alias withMissing: itemMissing.checked
     property alias panelColor: panel.color
     property color textColor: colorScheme[theme].filters
 
@@ -58,6 +59,16 @@ FocusScope {
             text: dataText[lang].games_filterMultiplayer
             textColor: root.textColor
             fontSize: vpx(20 * fontScalingFactor)
+
+            KeyNavigation.down: itemMissing
+        }
+
+        CheckBox {
+            id: itemMissing
+            text: dataText[lang].games_filterExistingFiles
+            textColor: root.textColor
+            fontSize: vpx(20 * fontScalingFactor)
+            checked: filterInstalledGames
         }
     }
 

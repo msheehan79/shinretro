@@ -166,7 +166,7 @@ Item {
     Rectangle {
         id: regborder
         anchors.fill: parent
-        color: "transparent"
+        color: !gameData.missing ? "transparent" : "white"
         anchors.rightMargin: 1
         anchors.leftMargin: 1
         anchors.bottomMargin: 1

@@ -8,6 +8,7 @@ FocusScope {
     property alias withTitle: panel.withTitle
     property alias withMultiplayer: panel.withMultiplayer
     property alias withFavorite: panel.withFavorite
+    property alias withMissing: panel.withMissing
 
     signal closeRequested
 
