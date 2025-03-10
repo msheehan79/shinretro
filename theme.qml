@@ -263,6 +263,7 @@ FocusScope {
             games_filtered: "<b>FILTERS</b>",
             games_filterMultiplayer: "Multiplayer",
             games_filter: "FILTERS",
+            games_filterExistingFiles: "Installed Games",
             games_sortedBy: "SORTED BY",
             home_continue: "Continue playing",
             home_favorites: "Favorites",
@@ -292,6 +293,7 @@ FocusScope {
             settings_games_gridItemsPerRow: "Game grid - items per row",
             settings_games_gridItemsViewableRows: "Game grid - viewable rows",
             settings_games_page_updown_function: "Game grid - LT/RT button function",
+            settings_games_filter_installed_games: "Filter to only Installed Games by Default",
             menu_settings: "settings",
             menu_home: "home",
             menu_collections: "collections",
@@ -334,6 +336,7 @@ FocusScope {
             games_filtered: "<b>过滤器</b>",
             games_filterMultiplayer: "多人游戏",
             games_filter: "过滤器",
+            games_filterExistingFiles: "已安装的游戏",
             games_sortedBy: "SORTED BY",
             home_continue: "近期游戏",
             home_favorites: "收藏",
@@ -363,6 +366,7 @@ FocusScope {
             settings_games_gridItemsPerRow: "游戏网格 - 每行项目",
             settings_games_gridItemsViewableRows: "游戏网格 - 可查看的行",
             settings_games_page_updown_function: "Game grid - LT/RT button function",
+            settings_games_filter_installed_games: "Filter to only Installed Games by Default",
             menu_settings: "设置",
             menu_home: "主页",
             menu_collections: "游戏系统",
@@ -405,6 +409,7 @@ FocusScope {
             games_filtered: "<b>FILTER</b>",
             games_filterMultiplayer: "Mehrspieler",
             games_filter: "FILTER",
+            games_filterExistingFiles: "Installierte Spiele",
             games_sortedBy: "SORTIERT NACH",
             home_continue: "Weiterspielen",
             home_favorites: "Favoriten",
@@ -434,6 +439,7 @@ FocusScope {
             settings_games_gridItemsPerRow: "Spiele Raster - Objekte pro Reihe",
             settings_games_gridItemsViewableRows: "Spiele Raster - Sichtbare Reihen",
             settings_games_page_updown_function: "Spiel Raster - LT/RT-Tastenfunktion",
+            settings_games_filter_installed_games: "Filter to only Installed Games by Default",
             menu_settings: "Optionen",
             menu_home: "Start",
             menu_collections: "Sammlungen",
@@ -476,6 +482,7 @@ FocusScope {
             games_filtered: "<b>FILTRES</b>",
             games_filterMultiplayer: "Multijoueur",
             games_filter: "FILTRES",
+            games_filterExistingFiles: "Jeux installés",
             games_sortedBy: "TRIÉ PAR",
             home_continue: "Joué récemment",
             home_favorites: "Favoris",
@@ -505,6 +512,7 @@ FocusScope {
             settings_games_gridItemsPerRow: "Grille - nombre de jeux par ligne",
             settings_games_gridItemsViewableRows: "Grille - nombre de lignes",
             settings_games_page_updown_function: "Grille - Fonction bouton LT/RT",
+            settings_games_filter_installed_games: "Filter to only Installed Games by Default",
             menu_settings: "Réglages",
             menu_home: "Accueil",
             menu_collections: "Collections",
@@ -547,6 +555,7 @@ FocusScope {
             games_addFavorite: "ADICIONAR <b>FAVORITO</b>",
             games_filtered: "<b>FILTROS</b>",
             games_filterMultiplayer: "Multijogador",
+            games_filterExistingFiles: "Jogos Instalados",
             games_sortedBy: "ORDENADO POR",
             home_continue: "Continuar jogando",
             home_favorites: "Favoritos",
@@ -576,6 +585,7 @@ FocusScope {
             settings_games_gridItemsPerRow: "Grade - Jogos por fileira",
             settings_games_gridItemsViewableRows: "Grade - Fileiras visíveis",
             settings_games_page_updown_function: "Grade - função do botão LT/RT",
+            settings_games_filter_installed_games: "Filter to only Installed Games by Default",
             menu_settings: "ajustes",
             menu_home: "início",
             menu_collections: "coleções",
@@ -669,6 +679,7 @@ FocusScope {
     property string gamesPgUpDownFunction: api.memory.get('gamesPageUpDownFunction') || 'Collections'
     property int gamesBGImg: api.memory.get('gamesBGImgIndex') || 0
     property int gamesVideo: api.memory.get('gamesVideoIndex') || 0
+    property int filterInstalledGames: api.memory.get('gamesFilterInstalledGamesIndex')
     property bool gamesVideoMute: {
         if (api.memory.get('gamesVideoMuteIndex') == "1") {
             return true;

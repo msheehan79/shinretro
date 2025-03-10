@@ -26,13 +26,28 @@ FocusScope {
         id: sort_lastplayed_base
         sourceModel: api.allGames
         sorters: RoleSorter { roleName: "lastPlayed"; sortOrder: Qt.DescendingOrder; }
+        filters: ValueFilter {
+            roleName: "missing"
+            value: false
+            enabled: true
+        }
     }
 
     SortFilterProxyModel {
         id: sort_favorites_base
         sourceModel: api.allGames
         sorters: RoleSorter { roleName: "lastPlayed"; sortOrder: Qt.DescendingOrder; }
-        filters: ValueFilter { roleName: "favorite"; value: true; }
+        filters: [
+            ValueFilter { 
+                roleName: "favorite"; 
+                value: true; 
+            },
+            ValueFilter {
+                roleName: "missing"
+                value: false
+                enabled: true
+            }
+        ]
     }
 
     // 20 games to show maximum
@@ -161,9 +176,11 @@ FocusScope {
 
                     if (api.keys.isAccept(event)) {
                         event.accepted = true;
-                        playPlaySound();
-                        api.memory.set("currentMenuIndex", currentMenuIndex);
-                        currentGame.launch();
+                        if (!currentGame.missing) {
+                            playPlaySound();
+                            api.memory.set("currentMenuIndex", currentMenuIndex);
+                            currentGame.launch();
+                        }
                         return;
                     }
 
@@ -223,9 +240,11 @@ FocusScope {
 
                     if (api.keys.isAccept(event)) {
                         event.accepted = true;
-                        sfxPlay.play();
-                        api.memory.set("currentMenuIndex", currentMenuIndex);
-                        currentGame.launch();
+                        if (!currentGame.missing) {
+                            sfxPlay.play();
+                            api.memory.set("currentMenuIndex", currentMenuIndex);
+                            currentGame.launch();
+                        }
                     }
                     
                     if ([Qt.Key_Up, Qt.Key_Right, Qt.Key_Down, Qt.Key_Left].includes(event.key)) {
@@ -330,12 +349,12 @@ FocusScope {
                 }
             }
 
-            clip: currentFavoritesIndex == 0 || currentFavoritesIndex == maximumFavoritesShown ? false : true
+            clip: true
             highlightRangeMode: ListView.ApplyRange
             snapMode: ListView.SnapOneItem
             highlightMoveDuration: vpx(100)
-            preferredHighlightBegin: width * 0.4
-            preferredHighlightEnd: width * 0.6
+            preferredHighlightBegin: width * 0.01
+            preferredHighlightEnd: width * 0.4
             focus: false
 
             Keys.onPressed: {
@@ -345,9 +364,11 @@ FocusScope {
 
                 if (api.keys.isAccept(event)) {
                     event.accepted = true;
-                    playPlaySound();
-                    api.memory.set("currentMenuIndex", currentMenuIndex);
-                    currentGame.launch();
+                    if (!currentGame.missing) {
+                        playPlaySound();
+                        api.memory.set("currentMenuIndex", currentMenuIndex);
+                        currentGame.launch();
+                    }
                 }
 
                 if ([Qt.Key_Up, Qt.Key_Right, Qt.Key_Left].includes(event.key)) {

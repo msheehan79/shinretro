@@ -77,11 +77,26 @@ Item {
                 id: completedicon
                 parentImageWidth: boxFront.paintedWidth
             }
+            z: 10
+        }
+
+        Rectangle {
+            id: regborder1
+            anchors.centerIn: boxFront
+            anchors.rightMargin: 1
+            anchors.leftMargin: 1
+            anchors.bottomMargin: 1
+            anchors.topMargin: 1
+            color: !gameData.missing ? "transparent" : "white"
+            opacity: 0.5
+            width: boxFront.paintedWidth
+            height: boxFront.paintedHeight
+            z: 15
         }
 
         Rectangle {
             anchors.centerIn: boxFront
-            anchors.horizontalCenterOffset: vpx(- (1 - (1 / gamesGridIPR)))
+            //anchors.horizontalCenterOffset: vpx(- (1 - (1 / gamesGridIPR)))
             width: boxFront.paintedWidth + vpx(8)
             height: boxFront.paintedHeight + vpx(8)
             color: selectionFrameColorSelected

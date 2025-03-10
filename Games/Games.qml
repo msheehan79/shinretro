@@ -62,7 +62,7 @@ FocusScope {
 
     focus: games.focus
     state: {
-        if (!filter.withMultiplayer && !filter.withFavorite && !filter.withTitle)
+        if (!filter.withMultiplayer && !filter.withFavorite && !filter.withTitle && !filter.withMissing)
             return "unfiltered"
         else return "filtered"
     }
@@ -86,6 +86,11 @@ FocusScope {
                 roleName: "favorite"
                 value: true
                 enabled: filter.withFavorite
+            },
+            ValueFilter {
+                roleName: "missing"
+                value: false
+                enabled: filter.withMissing
             }
         ]
         sorters: [
@@ -125,6 +130,11 @@ FocusScope {
                 roleName: "favorite"
                 value: true
                 enabled: filter.withFavorite
+            },
+            ValueFilter {
+                roleName: "missing"
+                value: false
+                enabled: filter.withMissing
             }
         ]
     }
@@ -149,6 +159,11 @@ FocusScope {
                 roleName: "favorite"
                 value: true
                 enabled: filter.withFavorite
+            },
+            ValueFilter {
+                roleName: "missing"
+                value: false
+                enabled: filter.withMissing
             }
         ]
     }
@@ -658,7 +673,7 @@ FocusScope {
                     if (api.keys.isAccept(event)) {
                         event.accepted = true;
                         playPlaySound();
-                        if (currentGame !== null) {
+                         if (currentGame !== null && !currentGame.missing) {
                             saveCurrentState(currentGameIndex);
                             currentGame.launch();
                         }

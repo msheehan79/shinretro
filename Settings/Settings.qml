@@ -148,7 +148,8 @@ FocusScope {
             [ dataText[lang].settings_global_backgroundImg,  "gamesBGImg",  "",  dataText[lang].global_yes + "," + dataText[lang].global_no ],
             [ dataText[lang].settings_global_videoPlayback,  "gamesVideo",  "",  dataText[lang].global_yes + "," + dataText[lang].global_no ],
             [ dataText[lang].settings_global_videoMute,  "gamesVideoMute",  "",  dataText[lang].global_no + "," + dataText[lang].global_yes ],
-            [ dataText[lang].settings_games_page_updown_function,  "gamesPageUpDownFunction",  "",  "Collections,Games" ]
+            [ dataText[lang].settings_games_page_updown_function,  "gamesPageUpDownFunction",  "",  "Collections,Games" ],
+            [ dataText[lang].settings_games_filter_installed_games,  "gamesFilterInstalledGames",  "",  dataText[lang].global_no + "," + dataText[lang].global_yes ]
             ].forEach(function(element) {
                 append({
                             settingName: element[0],
