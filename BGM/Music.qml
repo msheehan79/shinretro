@@ -39,7 +39,6 @@ Item {
         target: Qt.application;
         function onStateChanged() {
             if (playBGM === false) {
-                console.log('playBGM was false')
                 return;
             }
             if (Qt.application.state === Qt.ApplicationActive) {
