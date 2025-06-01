@@ -76,6 +76,7 @@ Item {
             CompletedIcon {
                 id: completedicon
                 parentImageWidth: boxFront.paintedWidth
+                isGridView: true
             }
             z: 10
         }

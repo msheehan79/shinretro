@@ -9,6 +9,7 @@ import "Home"
 import "Collections"
 import "Menu"
 import "Games"
+import "Details"
 import "Settings"
 import "BGM"
 
@@ -260,11 +261,14 @@ FocusScope {
             games_withoutDescription: "without description",
             games_removeFavorite: "REMOVE <b>FAVORITE</b>",
             games_addFavorite: "ADD <b>FAVORITE</b>",
+            games_markCompleted: "MARK <b>COMPLETED</b>",
+            games_removeCompleted: "REMOVE <b>COMPLETED</b>",
             games_filtered: "<b>FILTERS</b>",
             games_filterMultiplayer: "Multiplayer",
             games_filter: "FILTERS",
             games_filterExistingFiles: "Installed Games",
             games_sortedBy: "SORTED BY",
+            games_play: "<b>PLAY</b>",
             home_continue: "Continue playing",
             home_favorites: "Favorites",
             home_play: "Play",
@@ -297,7 +301,11 @@ FocusScope {
             menu_settings: "settings",
             menu_home: "home",
             menu_collections: "collections",
-            menu_games:"games"
+            menu_games:"games",
+            menu_details: "details",
+            details_developer: "Developer: ",
+            details_publisher: "Publisher: ",
+            details_released: "Released: "
         },
        "ch": {
             settings_collection_accentColor_dimm: "dimm",
@@ -333,11 +341,14 @@ FocusScope {
             games_withoutDescription: "没有描述",
             games_removeFavorite: "取消收藏 <b>收藏</b>",
             games_addFavorite: "添加 <b>收藏</b>",
+            games_markCompleted: "标记<b>已完成</b>",
+            games_removeCompleted: "删除<b>已完成</b>",
             games_filtered: "<b>过滤器</b>",
             games_filterMultiplayer: "多人游戏",
             games_filter: "过滤器",
             games_filterExistingFiles: "已安装的游戏",
             games_sortedBy: "SORTED BY",
+            games_play: "<b>玩</b>",
             home_continue: "近期游戏",
             home_favorites: "收藏",
             home_play: "游玩",
@@ -370,7 +381,11 @@ FocusScope {
             menu_settings: "设置",
             menu_home: "主页",
             menu_collections: "游戏系统",
-            menu_games:"全部游戏"
+            menu_games:"全部游戏",
+            menu_details: "细节",
+            details_developer: "开发人员: ",
+            details_publisher: "出版商: ",
+            details_released: "发布: "
         },
         "de": {
             settings_collection_accentColor_dimm: "Gedämpft",
@@ -406,11 +421,14 @@ FocusScope {
             games_withoutDescription: "ohne Beschreibung",
             games_removeFavorite: "<b>FAVORIT</b> entfernen",
             games_addFavorite: "<b>FAVORIT</b> hinzufügen",
+            games_markCompleted: "MARKIEREN SIE <b>ABGESCHLOSSEN</b>",
+            games_removeCompleted: "ENTFERNEN <b>ABGESCHLOSSEN</b>",
             games_filtered: "<b>FILTER</b>",
             games_filterMultiplayer: "Mehrspieler",
             games_filter: "FILTER",
             games_filterExistingFiles: "Installierte Spiele",
             games_sortedBy: "SORTIERT NACH",
+            games_play: "<b>SPIELEN</b>",
             home_continue: "Weiterspielen",
             home_favorites: "Favoriten",
             home_play: "Spiele",
@@ -443,7 +461,11 @@ FocusScope {
             menu_settings: "Optionen",
             menu_home: "Start",
             menu_collections: "Sammlungen",
-            menu_games:"Spiele"
+            menu_games:"Spiele",
+            menu_details: "Details",
+            details_developer: "Entwickler: ",
+            details_publisher: "Herausgeber: ",
+            details_released: "Freigegeben: "
         },
         "fr": {
             settings_collection_accentColor_dimm: "Assombrir",
@@ -479,11 +501,14 @@ FocusScope {
             games_withoutDescription: "sans description",
             games_removeFavorite: "RETIRER DES <b>FAVORIS</b>",
             games_addFavorite: "AJOUTER AUX <b>FAVORIS</b>",
+            games_markCompleted: "MARQUE <b>TERMINÉ</b>",
+            games_removeCompleted: "SUPPRIMER <b>TERMINÉ</b>",
             games_filtered: "<b>FILTRES</b>",
             games_filterMultiplayer: "Multijoueur",
             games_filter: "FILTRES",
             games_filterExistingFiles: "Jeux installés",
             games_sortedBy: "TRIÉ PAR",
+            games_play: "<b>JOUER</b>",
             home_continue: "Joué récemment",
             home_favorites: "Favoris",
             home_play: "Jouer",
@@ -516,7 +541,11 @@ FocusScope {
             menu_settings: "Réglages",
             menu_home: "Accueil",
             menu_collections: "Collections",
-            menu_games:"Jeux"
+            menu_games:"Jeux",
+            menu_details: "détails",
+            details_developer: "Développeur: ",
+            details_publisher: "Éditeur: ",
+            details_released: "Libéré: "
         },
         "pt": {
             settings_collection_accentColor_dimm: "dimm",
@@ -553,10 +582,13 @@ FocusScope {
             games_withoutDescription: "sem descrição",
             games_removeFavorite: "REMOVER <b>FAVORITO</b>",
             games_addFavorite: "ADICIONAR <b>FAVORITO</b>",
+            games_markCompleted: "MARCA <b>CONCLUÍDA</b>",
+            games_removeCompleted: "REMOVER <b>CONCLUÍDO</b>",
             games_filtered: "<b>FILTROS</b>",
             games_filterMultiplayer: "Multijogador",
             games_filterExistingFiles: "Jogos Instalados",
             games_sortedBy: "ORDENADO POR",
+            games_play: "<b>JOGAR</b>",
             home_continue: "Continuar jogando",
             home_favorites: "Favoritos",
             home_play: "Jogar",
@@ -589,7 +621,11 @@ FocusScope {
             menu_settings: "ajustes",
             menu_home: "início",
             menu_collections: "coleções",
-            menu_games:"jogos"
+            menu_games:"jogos",
+            menu_details: "detalhes",
+            details_developer: "Desenvolvedor: ",
+            details_publisher: "Editor: ",
+            details_released: "Lançado: "
         }
     }
 
@@ -692,6 +728,7 @@ FocusScope {
     // [1] = HOME
     // [2] = COLLECTIONS
     // [3] = GAMES
+    // [4] = DETAILS
 
     property int currentMenuIndex: api.memory.get("currentMenuIndex") || 1
 
@@ -722,7 +759,8 @@ FocusScope {
         { name: "settings", title: dataText[lang].menu_settings},
         { name: "home", title: dataText[lang].menu_home},
         { name: "collections", title: dataText[lang].menu_collections},
-        { name: "games", title: dataText[lang].menu_games}
+        { name: "games", title: dataText[lang].menu_games},
+        { name: "details", title: dataText[lang].menu_details},
     ]
 
     property var dataLaunchbox: {
@@ -833,7 +871,7 @@ FocusScope {
     property var dataConsoles: {
         "default":            { manufacturer: null,            release: null,   color: "#000000", altColor: "#303030", altColor2: "#B8B8B8", fullName: "Default"   },
         "all":                { manufacturer: null,            release: null,   color: "#851740", altColor: "#6D1234", altColor2: "#364792", fullName: "All Games"   },
-        "lastplayed":         { manufacturer: null,            release: null,   color: "#FFFFFF", altColor: "#E6E6E6", altColor2: "#CDCDCD", fullName: "Last Played"   },
+        "lastplayed":         { manufacturer: null,            release: null,   color: "#FFFFFF", altColor: "#C4C4C4", altColor2: "#CDCDCD", fullName: "Last Played"   },
         "favorites":          { manufacturer: null,            release: null,   color: "#D4C028", altColor: "#AA9A20", altColor2: "#100F57", fullName: "Favorites"   },
         "3do":                { manufacturer: "panasonic",     release: "1993", color: "#0000A0", altColor: "#000080", altColor2: "#FFE41B", fullName: "3DO"   },
         "3ds":                { manufacturer: "nintendo",      release: "2011", color: "#C02424", altColor: "#961D1D", altColor2: "#929497", fullName: "Nintendo 3DS"   },
@@ -1172,6 +1210,16 @@ FocusScope {
         visible: opacity
     }
 
+    Details {
+        id: details
+        width: root.width
+        height: root.height * 0.9
+        anchors.bottom: root.bottom
+        focus: ( root.state === "details" )
+        opacity: focus
+        visible: opacity
+    }
+
     Menu {
         id: menu
         width: root.width
@@ -1198,7 +1246,7 @@ FocusScope {
         if (api.keys.isNextPage(event)) {
             event.accepted = true;
             playPageSound();
-            if (currentMenuIndex < (dataMenu.length - 1))
+            if (currentMenuIndex < (dataMenu.length - 2))
                 currentMenuIndex++;
             return;
         }

@@ -154,7 +154,7 @@ FocusScope {
                 Component {
                     id: cmpt_helper_collection
                     Item {
-                        visible: ["home","games"].includes(root.state)
+                        visible: ["home","games","details"].includes(root.state)
                         Image {
                             id: img_helper_collection_region
                             anchors.fill: parent
@@ -166,6 +166,8 @@ FocusScope {
                                     return "../assets/collections/" + clearShortname(home.currentGame.collections.get(0).shortName) + "/logo_" + region + "_" + logoVariant
                                 if (root.state === "games")
                                     return "../assets/collections/" + clearShortname(allCollections[currentCollectionIndex].shortName) + "/logo_" + region + "_" + logoVariant
+                                if (root.state === "details")
+                                    return "../assets/collections/" + clearShortname(details.currentGame.collections.get(0).shortName) + "/logo_" + region + "_" + logoVariant
                             }
                             sourceSize.width: width
                             fillMode: Image.PreserveAspectFit
@@ -195,6 +197,8 @@ FocusScope {
                                     return "../assets/collections/" + clearShortname(home.currentGame.collections.get(0).shortName) + "/logo_" + logoVariant
                                 if (root.state === "games")
                                     return "../assets/collections/" + clearShortname(allCollections[currentCollectionIndex].shortName) + "/logo_" + logoVariant
+                                if (root.state === "details")
+                                    return "../assets/collections/" + clearShortname(details.currentGame.collections.get(0).shortName) + "/logo_" + logoVariant
                             }
                             sourceSize.width: width
                             fillMode: Image.PreserveAspectFit
@@ -234,7 +238,7 @@ FocusScope {
                         rightMargin: vpx(35)
                     }
                     asynchronous: true
-                    active: ["home","games"].includes(root.state)
+                    active: ["home","games","details"].includes(root.state)
                     visible: status === Loader.Ready
                 }
 
@@ -263,7 +267,7 @@ FocusScope {
                         anchors.right: parent.right
                     }
                 }
-                visible: ["home","games"].includes(root.state)
+                visible: ["home","games","details"].includes(root.state)
             }
         }
     }

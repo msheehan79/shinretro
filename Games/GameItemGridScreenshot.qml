@@ -151,6 +151,7 @@ Item {
             CompletedIcon {
                 id: completedicon
                 parentImageWidth: screenshot.width
+                isGridView: true
                 z: 15
             }
         }

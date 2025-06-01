@@ -4,35 +4,45 @@ import QtGraphicalEffects 1.12
 Item {
     id: completedtag
     property double parentImageWidth
+    property bool isGridView
 
-    visible: (gameData.extra.completed !== undefined) && (gameData.extra.completed.toString() === 'True') ? true : false
+    visible: {
+        if ((gameData.completed !== undefined) && (gameData.completed == true)) {
+            return true;
+        } else if ((gameData.extra.completed !== undefined) && (gameData.extra.completed.toString() === 'True')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     anchors {
         bottom: parent.bottom
         left: parent.left
         right: parent.right
     }
     width: parent.width
-    height: parent.height / 5
+    height: isGridView ? parent.height / 5 : parent.height
 
     Image {
         id: completedbg
         anchors.centerIn: parent
         source: "../assets/ribbon.svg"
         fillMode: Image.PreserveAspectFit
-        width: completedTxt.width + vpx(35)
+        width: completedTxt.width * 1.75
+        height: completedTxt.height * 1.75
     }
 
     Text {
         id: completedTxt
         anchors {
             centerIn: completedbg
-            verticalCenterOffset: vpx(-3)
+            verticalCenterOffset: -vpx(completedbg.height * 0.075)
         }
         text: dataText[lang].games_completed
         font {
             family: montserratMedium.name
             weight: Font.Bold
-            pixelSize: (parentImageWidth * 0.75) > 125 ? vpx(10) : vpx((parentImageWidth * 0.75) / 12)
+            pixelSize: vpx(parentImageWidth * 0.025)
         }
         color: colorScheme[theme].textlight
         z: 15

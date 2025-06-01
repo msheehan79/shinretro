@@ -94,9 +94,9 @@ Item {
         height: rating_stars.height + vpx(7)
         anchors {
             top: rating_stars.top
-            topMargin: -vpx(1)
+            topMargin: -vpx(2)
             left: rating_stars.left
-            leftMargin: -vpx(3)
+            leftMargin: -vpx(4)
         }
         color: colorScheme[theme].background
     }
@@ -104,6 +104,8 @@ Item {
     Row {
         id: rating_stars
         spacing: vpx(4)
+        anchors.left: parent.left
+        anchors.leftMargin: vpx(3)
         Repeater {
             model: starsMatrix
             delegate: Loader {
