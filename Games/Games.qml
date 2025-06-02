@@ -673,7 +673,7 @@ FocusScope {
                     if (api.keys.isAccept(event)) {
                         event.accepted = true;
                         playAcceptSound();
-                        details.currentGame = currentGame
+                        details.gameData = currentGame
                         currentMenuIndex = 4;
                         return;
                     }

@@ -7,17 +7,16 @@ import "qrc:/qmlutils" as PegasusUtils
 import "../Global"
 
 FocusScope {
-    id: testDetails
-
     readonly property string touch_colorBright: (dataConsoles[clearedShortname] !== undefined) ? dataConsoles[clearedShortname].color : dataConsoles["default"].color
     readonly property string touch_colorDimm: touch_colorBright.replace(/#/g, "#77");
     readonly property string touch_color: (accentColor === "bright") ? touch_colorBright : touch_colorDimm
     readonly property string alt_color2: (dataConsoles[clearedShortname] !== undefined) ? dataConsoles[clearedShortname].altColor2 : dataConsoles["default"].altColor2
     readonly property string alt_color: (dataConsoles[clearedShortname] !== undefined) ? dataConsoles[clearedShortname].altColor : dataConsoles["default"].altColor
+    readonly property string text_color: colorScheme[theme].text
 
-
+    property var gameData
     property var currentIndex
-    property var currentGame
+    property var currentGame: gameData !== undefined ? gameData : api.allGames.get(0)
 
     // Transition Animation
     Behavior on focus {
@@ -66,15 +65,15 @@ FocusScope {
             top: parent.top
             topMargin: vpx(25)
             right: parent.right
-            rightMargin: vpx(50)
+            rightMargin: parent.width * 0.05
         }
 
         CompletedIcon {
+            game: currentGame
             parentImageWidth: 800
             isGridView: false
         }
-
-        visible: currentGame.completed == true
+        visible: (currentGame.completed !== undefined && currentGame.completed == true) || (currentGame.extra.completed !== undefined && currentGame.extra.completed.toString() === 'True')
     }
 
     // Content
@@ -91,9 +90,11 @@ FocusScope {
         // Box Art
         RowLayout {
             anchors.fill: parent
-            spacing: vpx(40)
+            width: parent.width
+            spacing: vpx(35)
 
-            Column {
+            ColumnLayout {
+                id: col_1
                 Layout.preferredHeight: parent.height;
                 Layout.preferredWidth: parent.width * 0.25;
 
@@ -116,6 +117,7 @@ FocusScope {
             }
 
             ColumnLayout {
+                id: col_2
                 Layout.preferredWidth: parent.width * 0.5;
                 Layout.alignment: Qt.AlignTop
                 spacing: 2
@@ -128,6 +130,7 @@ FocusScope {
                     Layout.fillHeight: false
                     text: currentGame.title
                     elide: Text.ElideRight
+                    lineHeight: 0.75
                     font {
                         family: robotoSlabRegular.name
                         pixelSize: vpx(40)
@@ -140,7 +143,7 @@ FocusScope {
                 Row {
                     id: details_row
                     Layout.alignment: Qt.AlignTop
-                    Layout.topMargin: vpx(5)
+                    Layout.topMargin: vpx(20)
                     Layout.preferredWidth: parent.width
                     spacing: vpx(15)
 
@@ -334,17 +337,17 @@ FocusScope {
             }
 
             // Overlay / Addt'l artwork
-            Column {
+            ColumnLayout {
+                id: col_3
                 Layout.preferredHeight: parent.height
-                Layout.fillWidth: true
+                Layout.preferredWidth: parent.width * 0.20;
                 Layout.alignment: Qt.AlignTop
-                topPadding: vpx(20)
-                spacing: 0
+                Layout.topMargin: vpx(20)
+                spacing: vpx(10)
 
                 GridLayout {
                     id: addtl_details_grid
                     columns: 2
-                    Layout.preferredWidth: vpx(20)
 
                     Text {
                         text: dataText[lang].details_released
@@ -363,9 +366,9 @@ FocusScope {
                             family: robotoSlabRegular.name
                             pixelSize: vpx(16 * fontScalingFactor)
                         }
-                        Layout.preferredWidth: parent.width / 1.5
                         elide: Text.ElideRight
                         horizontalAlignment: Text.AlignLeft
+                        Layout.fillWidth: true
                         color: text_color
                     }
                     Text {
@@ -386,9 +389,9 @@ FocusScope {
                             weight: Font.Medium
                             pixelSize: vpx(16 * fontScalingFactor)
                         }
-                        Layout.preferredWidth: parent.width / 1.5
                         elide: Text.ElideRight
                         horizontalAlignment: Text.AlignLeft
+                        Layout.fillWidth: true
                         color: text_color
                     }
                     Text {
@@ -409,9 +412,9 @@ FocusScope {
                             weight: Font.Medium
                             pixelSize: vpx(16 * fontScalingFactor)
                         }
-                        Layout.preferredWidth: parent.width / 1.5
                         elide: Text.ElideRight
                         horizontalAlignment: Text.AlignLeft
+                        Layout.fillWidth: true
                         color: text_color
                     }
                 }
@@ -419,14 +422,11 @@ FocusScope {
                 // Screenshot
                 Loader {
                     id: loader_screenshot
-                    height: parent.height * 0.4
-                    anchors {
-                        top: addtl_details_grid.bottom
-                        topMargin: vpx(10)
-                        left: parent.left
-                        right: parent.right
-                    }
                     asynchronous: true
+                    Layout.preferredWidth: parent.width
+                    Layout.minimumWidth: parent.width
+                    Layout.maximumWidth: parent.width
+                    Layout.fillHeight: true
                     sourceComponent: screenshot_image
                     active: true
                     visible: status === Loader.Ready
@@ -437,9 +437,6 @@ FocusScope {
                     Image {
                         id: img_screenshot
                         source: currentGame.assets.screenshot || gameData.assets.titlescreen || gameData.assets.background || ""
-                        anchors {
-                            fill: parent
-                        }
                         fillMode: Image.PreserveAspectFit
                         horizontalAlignment: Image.AlignHCenter
                         verticalAlignment: Image.AlignTop
@@ -452,16 +449,14 @@ FocusScope {
                 // Overlay
                 Loader {
                     id: loader_overlay
-                    width: parent.width * 0.75
-                    anchors {
-                        horizontalCenter: parent.horizontalCenter
-                        top: loader_screenshot.bottom
-                        topMargin: -vpx(55)
-                    }
                     asynchronous: true
+                    Layout.preferredWidth: parent.width
+                    Layout.preferredHeight: parent.height * 0.45
+                    Layout.alignment: Qt.AlignTop
+                    Layout.topMargin: -vpx(280)
                     sourceComponent: overlay_image
                     active: true
-                    visible: status === Loader.Ready
+                    visible: status === Loader.Ready && currentGame.assets.background != ""
                 }
 
                 Component {
@@ -471,7 +466,7 @@ FocusScope {
                         source: currentGame.assets.background
                         fillMode: Image.PreserveAspectFit
                         horizontalAlignment: Image.AlignHCenter
-                        verticalAlignment: Image.AlignVCenter
+                        verticalAlignment: Image.AlignTop
                         smooth: false
                         asynchronous: true
                         visible: currentGame.assets.background != ""
@@ -483,7 +478,7 @@ FocusScope {
     }
 
     Component.onCompleted: {
-        currentGame = api.memory.get("currentGame") || currentGame
+        gameData = api.memory.get("currentGame")
     }
 
     Keys.onPressed: {

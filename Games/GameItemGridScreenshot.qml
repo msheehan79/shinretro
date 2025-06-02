@@ -150,6 +150,7 @@ Item {
 
             CompletedIcon {
                 id: completedicon
+                game: gameData
                 parentImageWidth: screenshot.width
                 isGridView: true
                 z: 15

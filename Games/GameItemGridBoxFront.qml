@@ -75,6 +75,7 @@ Item {
 
             CompletedIcon {
                 id: completedicon
+                game: gameData
                 parentImageWidth: boxFront.paintedWidth
                 isGridView: true
             }

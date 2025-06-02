@@ -3,13 +3,14 @@ import QtGraphicalEffects 1.12
 
 Item {
     id: completedtag
+    property var game
     property double parentImageWidth
     property bool isGridView
 
     visible: {
-        if ((gameData.completed !== undefined) && (gameData.completed == true)) {
+        if ((game !== undefined) && (game.completed !== undefined) && (game.completed == true)) {
             return true;
-        } else if ((gameData.extra.completed !== undefined) && (gameData.extra.completed.toString() === 'True')) {
+        } else if ((game !== undefined) && (game.extra.completed !== undefined) && (game.extra.completed.toString() === 'True')) {
             return true;
         } else {
             return false;
