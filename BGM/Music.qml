@@ -70,7 +70,6 @@ Item {
         repeat: false;
         onTriggered: {
             if (bgPlaylist.itemCount > 0 && playBGM) {
-                console.log('triggered')
                 bgPlaylist.shuffle();
                 bgMusic.play();
             }

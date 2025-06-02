@@ -179,6 +179,7 @@ FocusScope {
                         if (!currentGame.missing) {
                             playPlaySound();
                             api.memory.set("currentMenuIndex", currentMenuIndex);
+                            api.memory.set('currentGame', currentGame);
                             currentGame.launch();
                         }
                         return;
@@ -243,6 +244,7 @@ FocusScope {
                         if (!currentGame.missing) {
                             sfxPlay.play();
                             api.memory.set("currentMenuIndex", currentMenuIndex);
+                            api.memory.set('currentGame', currentGame);
                             currentGame.launch();
                         }
                     }
@@ -367,6 +369,7 @@ FocusScope {
                     if (!currentGame.missing) {
                         playPlaySound();
                         api.memory.set("currentMenuIndex", currentMenuIndex);
+                        api.memory.set('currentGame', currentGame);
                         currentGame.launch();
                     }
                 }

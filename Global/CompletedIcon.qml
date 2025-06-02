@@ -37,7 +37,7 @@ Item {
         id: completedTxt
         anchors {
             centerIn: completedbg
-            verticalCenterOffset: -vpx(completedbg.height * 0.075)
+            verticalCenterOffset: -(completedbg.height * 0.125)
         }
         text: dataText[lang].games_completed
         font {

@@ -16,7 +16,7 @@ FocusScope {
 
     property var gameData
     property var currentIndex
-    property var currentGame: gameData !== undefined ? gameData : api.allGames.get(0)
+    property var currentGame: (gameData !== undefined && gameData !== null) ? gameData : api.allGames.get(0)
 
     // Transition Animation
     Behavior on focus {
@@ -453,7 +453,7 @@ FocusScope {
                     Layout.preferredWidth: parent.width
                     Layout.preferredHeight: parent.height * 0.45
                     Layout.alignment: Qt.AlignTop
-                    Layout.topMargin: -vpx(280)
+                    Layout.topMargin: -(parent.height * 0.50)
                     sourceComponent: overlay_image
                     active: true
                     visible: status === Loader.Ready && currentGame.assets.background != ""
