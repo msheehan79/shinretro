@@ -674,6 +674,7 @@ FocusScope {
                         event.accepted = true;
                         playAcceptSound();
                         details.gameData = currentGame
+                        details.currentIndex = currentGameIndex
                         currentMenuIndex = 4;
                         return;
                     }

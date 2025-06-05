@@ -490,6 +490,7 @@ FocusScope {
             event.accepted = true;
             playPlaySound();
             if (currentGame !== null && !currentGame.missing) {
+                saveCurrentState(currentIndex)
                 api.memory.set('currentGame', currentGame);
                 currentGame.launch();
             }
