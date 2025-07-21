@@ -987,6 +987,7 @@ FocusScope {
         "scummvm":            { manufacturer: null,            release: null,   color: "#379742", altColor: "#297031", altColor2: "#C26317", fullName: "PC"  },
         "sega32x":            { manufacturer: "sega",          release: "1994", color: "#2D2D2F", altColor: "#0D0E0C", altColor2: "#F2BA5C", fullName: "Sega 32X"  },
         "segacd":             { manufacturer: "sega",          release: "1991", color: "#2D2D2F", altColor: "#0D0D0D", altColor2: "#732A46", fullName: "Sega CD"  },
+        "segacd32x":          { manufacturer: "sega",          release: "1994", color: "#F6AE1E", altColor: "#CA952D", altColor2: "#B00804", fullName: "Sega CD 32X"  },
         "sfc":                { manufacturer: "nintendo",      release: "1990", color: "#007544", altColor: "#004D2D", altColor2: "#0A2A8D", fullName: "Super Famicom"  },
         "sg1000":             { manufacturer: "sega",          release: "1983", color: "#9A2025", altColor: "#7F1A1D", altColor2: "#BBBDBD", fullName: "Sega SG-1000"  },
         "snes":               { manufacturer: "nintendo",      release: "1990", color: "#4F43AE", altColor: "#3A317F", altColor2: "#C0C0C0", fullName: "Super Nintendo"  },
