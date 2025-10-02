@@ -69,6 +69,14 @@ FocusScope {
             textColor: root.textColor
             fontSize: vpx(20 * fontScalingFactor)
             checked: filterInstalledGames
+
+            onCheckedChanged: {
+                if (checked) {
+                    filterInstalledGames = true;
+                } else {
+                    filterInstalledGames = false;
+                }
+            }
         }
     }
 

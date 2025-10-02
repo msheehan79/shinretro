@@ -715,7 +715,7 @@ FocusScope {
     property string gamesPgUpDownFunction: api.memory.get('gamesPageUpDownFunction') || 'Collections'
     property int gamesBGImg: api.memory.get('gamesBGImgIndex') || 0
     property int gamesVideo: api.memory.get('gamesVideoIndex') || 0
-    property int filterInstalledGames: api.memory.get('gamesFilterInstalledGamesIndex')
+    property bool filterInstalledGames: api.memory.get('gamesFilterInstalledGamesIndex')
     property bool gamesVideoMute: {
         if (api.memory.get('gamesVideoMuteIndex') == "1") {
             return true;

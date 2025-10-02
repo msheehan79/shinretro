@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtGraphicalEffects 1.12
+import SortFilterProxyModel 0.2
 
 Item {
     property bool isCurrentItem: PathView.isCurrentItem
@@ -24,6 +25,18 @@ Item {
     width: PathView.view.width
     height: PathView.view.height
     opacity: isCurrentItem
+
+    SortFilterProxyModel {
+        id: filteredGames
+        sourceModel: currentCollection.games
+        filters: [
+            ValueFilter {
+                roleName: "missing"
+                value: false
+                enabled: filterInstalledGames
+            }
+        ]
+    }
 
     Component {
         id: cpnt_collection_details
@@ -94,7 +107,7 @@ Item {
                     topMargin: vpx(25)
                     horizontalCenter: img_collection_logo.horizontalCenter
                 }
-                text: modelData.games.count + " " + dataText[lang].collectionDetails_gamesAvailable
+                text: filteredGames.count + " " + dataText[lang].collectionDetails_gamesAvailable
                 font {
                     family: robotoSlabLight.name
                     pixelSize: vpx(20 * fontScalingFactor)
