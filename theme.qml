@@ -925,6 +925,7 @@ FocusScope {
         "dos":                { manufacturer: "ibm",           release: "1981", color: "#666870", altColor: "#55575E", altColor2: "#1F70C1", fullName: "DOS"  },
         "dragon32":           { manufacturer: "dragonData",    release: "1982", color: "#F50019", altColor: "#CC0014", altColor2: "#74B719", fullName: "Dragon 32"  },
         "dreamcast":          { manufacturer: "sega",          release: "1998", color: "#FB7A33", altColor: "#C0571C", altColor2: "#33B4FB", fullName: "Sega Dreamcast"  },
+        "dsiware":            { manufacturer: "nintendo",      release: "2008", color: "#EE479B", altColor: "#CC3C84", altColor2: "#42CEDD", fullName: "Nintendo DSiWare"  },
         "famicom":            { manufacturer: "nintendo",      release: "1983", color: "#AA1C41", altColor: "#841533", altColor2: "#C0A987", fullName: "Famicom"  },
         "fba":                { manufacturer: null,            release: null,   color: "#231F20", altColor: "#0E0C0C", altColor2: "#FE7B07", fullName: "Arcade"  },
         "fbneo":              { manufacturer: null,            release: null,   color: "#FF8200", altColor: "#CC6900", altColor2: "#FFDBA1", fullName: "Arcade"  },
