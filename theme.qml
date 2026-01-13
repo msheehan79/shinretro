@@ -975,6 +975,7 @@ FocusScope {
         "ports":              { manufacturer: null,            release: null,   color: "#4B77BE", altColor: "#3D66A9", altColor2: "#36D7B7", fullName: "PC"  },
         "ps2":                { manufacturer: "sony",          release: "2000", color: "#33438A", altColor: "#293670", altColor2: "#40A9A8", fullName: "PS2"  },
         "ps3":                { manufacturer: "sony",          release: "2006", color: "#0D1114", altColor: "#333333", altColor2: "#0095D5", fullName: "PS3"  },
+        "ps4":                { manufacturer: "sony",          release: "2013", color: "#00265E", altColor: "#0070CC", altColor2: "#629CDE", fullName: "PS4"  },
         "psp":                { manufacturer: "sony",          release: "2004", color: "#313131", altColor: "#141414", altColor2: "#97A9BA", fullName: "PSP"  },
         "pspminis":           { manufacturer: "sony",          release: "2004", color: "#313131", altColor: "#141414", altColor2: "#97A9BA", fullName: "PSP Minis"  },
         "psvita":             { manufacturer: "sony",          release: "2011", color: "#0F1012", altColor: "#000000", altColor2: "#F9F7F7", fullName: "PS Vita"  },
