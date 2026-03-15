@@ -937,7 +937,7 @@ FocusScope {
         "gba":                { manufacturer: "nintendo",      release: "2001", color: "#280FBE", altColor: "#1A097B", altColor2: "#5C67A9", fullName: "Game Boy Advance"  },
         "gbc":                { manufacturer: "nintendo",      release: "1998", color: "#2D308E", altColor: "#1C1E59", altColor2: "#7642B6", fullName: "Game Boy Color"  },
         "gb":                 { manufacturer: "nintendo",      release: "1989", color: "#2D308E", altColor: "#1F2161", altColor2: "#9B2063", fullName: "Game Boy"  },
-        "gc":                 { manufacturer: "nintendo",      release: "2001", color: "#524C82", altColor: "#3D3960", altColor2: "#7B79AA", fullName: "Nintendo GameCube"  },
+        "gamecube":           { manufacturer: "nintendo",      release: "2001", color: "#524C82", altColor: "#3D3960", altColor2: "#7B79AA", fullName: "Nintendo GameCube"  },
         "genesis":            { manufacturer: "sega",          release: "1988", color: "#2D2D2E", altColor: "#0D0D0D", altColor2: "#181C4E", fullName: "Sega Genesis"  },
         "gog":                { manufacturer: "cdproject",     release: "2008", color: "#1D1D1D", altColor: "#0D0D0D", altColor2: "#6D1D72", fullName: "GOG"  },
         "gx4000":             { manufacturer: "amstrad",       release: "1990", color: "#9E4968", altColor: "#7A3850", altColor2: "#DBD9D4", fullName: "Amstrad GX4000"  },
