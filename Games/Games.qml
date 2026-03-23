@@ -919,7 +919,7 @@ FocusScope {
     }
 
     function getCollectionSortValue(gameData, collName) {
-        return gameData.extra['customsort-' + collName] !== undefined ? gameData.extra['customsort-' + collName] : "";
+        return gameData.extra['customsort-' + collName] !== undefined ? Number(gameData.extra['customsort-' + collName]) : "";
     }
 
     function getAvailableSortFields() {
