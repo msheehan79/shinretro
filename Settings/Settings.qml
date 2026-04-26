@@ -118,6 +118,8 @@ FocusScope {
             [ dataText[lang].settings_collection_showAll,  "allGamesCollection",  "",  dataText[lang].global_yes + "," + dataText[lang].global_no ],
             [ dataText[lang].settings_collection_showFavorites,  "favoritesCollection",  "",  dataText[lang].global_yes + "," + dataText[lang].global_no ],
             [ dataText[lang].settings_collection_showLastPlayed,  "lastPlayedCollection",  "",  dataText[lang].global_yes + "," + dataText[lang].global_no ],
+            [ dataText[lang].settings_collection_showGenre,  "genreCollection",  "",  dataText[lang].global_yes + "," + dataText[lang].global_no ],
+            [ dataText[lang].settings_collection_showReleaseYear,  "releaseYearCollection",  "",  dataText[lang].global_yes + "," + dataText[lang].global_no ],
             [ dataText[lang].settings_global_videoPlayback,  "collectionVideo",  "",  dataText[lang].global_yes + "," + dataText[lang].global_no ],
             [ dataText[lang].settings_global_videoMute,  "collectionVideoMute",  "",  dataText[lang].global_no + "," + dataText[lang].global_yes ]
             ].forEach(function(element) {

@@ -290,6 +290,8 @@ FocusScope {
             settings_collection_showAll: 'Show "All games" collection',
             settings_collection_showFavorites: 'Show "Favorites" collection',
             settings_collection_showLastPlayed: 'Show "Last Played" collection',
+            settings_collection_showGenre: 'Show Genres collections',
+            settings_collection_showReleaseYear: 'Show Release Year collections',
             settings_collection_accentColor: "Accent color brightness",
             settings_collection_accentColorNr: "Accent colors",
             settings_collection_manuColor: "Manufacturer logo variant",
@@ -356,7 +358,7 @@ FocusScope {
             settings_general_restart: "(重启生效)",
             settings_general_language: "语言",
             settings_general_colorScheme: "主题颜色",
-            settings_general_selectionFrame: "Selection frame color",
+            settings_general_selectionFrame: "选择框颜色",
             settings_general_music: "背景音乐",
             settings_general_muteSounds: "静音",
             settings_general_logoVariant: "改变logo",
@@ -368,11 +370,13 @@ FocusScope {
             settings_global_videoPlayback: "视频播放",
             settings_global_videoMute: "静音视频",
             settings_collection_showAll: 'Show "全部游戏" 游戏系统',
-            settings_collection_showFavorites: 'Show "Favorites" collection',
-            settings_collection_showLastPlayed: 'Show "Last Played" collection',
+            settings_collection_showFavorites: '显示“收藏夹”系列',
+            settings_collection_showLastPlayed: '显示“最近播放”收藏',
+            settings_collection_showGenre: '显示类型合集',
+            settings_collection_showReleaseYear: '显示发行年份合集',
             settings_collection_accentColor: "强调颜色亮度",
             settings_collection_accentColorNr: "强调色",
-            settings_collection_manuColor: "Manufacturer logo variant",
+            settings_collection_manuColor: "制造商标志变体",
             settings_games_layout: "游戏布局",
             settings_games_gridItemsPerRow: "游戏网格 - 每行项目",
             settings_games_gridItemsViewableRows: "游戏网格 - 可查看的行",
@@ -450,6 +454,8 @@ FocusScope {
             settings_collection_showAll: 'Sammlung "Alle Spiele" anzeigen',
             settings_collection_showFavorites: 'Sammlung "Favoriten" anzeigen',
             settings_collection_showLastPlayed: 'Sammlung "Zuletzt gespielt" anzeigen',
+            settings_collection_showGenre: 'Genre-Sammlungen anzeigen',
+            settings_collection_showReleaseYear: 'Sammlungen nach Erscheinungsjahr anzeigen',
             settings_collection_accentColor: "Akzentfarbhelligkeit",
             settings_collection_accentColorNr: "Akzentfarben",
             settings_collection_manuColor: "Hersteller Logo-Variation",
@@ -530,6 +536,8 @@ FocusScope {
             settings_collection_showAll: 'Afficher la collection "Tous"',
             settings_collection_showFavorites: 'Afficher la collection "Favoris"',
             settings_collection_showLastPlayed: 'Afficher la collection "Dernière lecture"',
+            settings_collection_showGenre: 'Afficher les collections par genre',
+            settings_collection_showReleaseYear: 'Afficher les collections par année de sortie',
             settings_collection_accentColor:  "Accentuer la luminosité des couleurs",
             settings_collection_accentColorNr: "Accentuer les couleurs",
             settings_collection_manuColor: "Style des fabricant logos",
@@ -610,6 +618,8 @@ FocusScope {
             settings_collection_showAll: 'Mostrar a coleção "Todos jogos"',
             settings_collection_showFavorites: 'Mostrar coleção "Favoritos"',
             settings_collection_showLastPlayed: 'Mostrar coleção "Últimas jogadas"',
+            settings_collection_showGenre: 'Mostrar coleções de géneros',
+            settings_collection_showReleaseYear: 'Mostrar coleções por ano de lançamento',
             settings_collection_accentColor: "Brilho da cor de destaque",
             settings_collection_accentColorNr: "Cores de destaque",
             settings_collection_manuColor: "Estilo dos fabricantes de logos",
@@ -701,6 +711,8 @@ FocusScope {
     property int allGamesCollection: api.memory.get('allGamesCollectionIndex') || 0
     property int favoritesCollection: api.memory.get('favoritesCollectionIndex') || 0
     property int lastPlayedCollection: api.memory.get('lastPlayedCollectionIndex') || 0
+    property int genreCollection: api.memory.get('genreCollectionIndex') || 0
+    property int releaseYearCollection: api.memory.get('releaseYearCollectionIndex') || 0
     property int collectionVideo: api.memory.get('collectionVideoIndex') || 0
     property bool collectionVideoMute: {
         if (api.memory.get('collectionVideoMuteIndex') == "1") {
@@ -744,6 +756,12 @@ FocusScope {
         if (allGamesCollection !== 1) {
             collections.unshift({"name": dataText[lang].collection_all, "shortName": "all", "games": api.allGames, "extra": {"collectiontype": "System"}});
         }
+        if (genreCollection !== 1 || releaseYearCollection !== 1) {
+            for (var i = 0; i < proxyModelArray.length; i++) {
+                collections.push({"name": proxyModelArray[i].name, "shortName": proxyModelArray[i].shortName, "games": proxyModelArray[i].games, "extra": {"collectiontype": proxyModelArray[i].type}});
+            }
+        }
+
         collections = collections.filter(systemCollection);
         return collections
     }
@@ -1052,6 +1070,58 @@ FocusScope {
         id: lastPlayed
         sourceModel: lastPlayedBase
         filters: IndexFilter { maximumIndex: 49; }
+    }
+
+    // Define dynamic Genre and Release Year collections
+    property var proxyModelArray: []
+
+    readonly property var categories: [
+        { "type": "Genre", "field": "genreList", "filter": "genre" },
+        { "type": "Release Year", "field": "releaseYear", "filter": "releaseYear" }
+    ]
+
+    property var combinedModel: {
+        let result = [];
+        categories.forEach(cat => {
+            if ((genreCollection !== 1 && cat.field == "genreList") || (releaseYearCollection !== 1 && cat.field == "releaseYear")) {
+                let values = uniqueGameValues(cat.field);
+                values.forEach(v => {
+                    result.push({ "val": v, "type": cat.type, "filter": cat.filter });
+                });
+            }
+        });
+        return result;
+    }
+
+    Instantiator {
+        id: collectionInstantiator
+        model: combinedModel
+        asynchronous: true
+
+        delegate: Item {
+            // modelData is an object: { val, type, filter }
+            property var name: modelData.val
+            property var shortName: modelData.val.toString().toLowerCase().replace(/\s/g, '')
+            property var type: modelData.type
+
+            property var games: SortFilterProxyModel {
+                sourceModel: api.allGames
+                filterRoleName: modelData.filter
+                filterPattern: modelData.val.toString()
+            }
+        }
+
+        onObjectAdded: (index, object) => {
+            proxyModelArray.push(object);
+            if (index === 0) {
+                proxyModelArrayChanged();
+            }
+        }
+        onObjectRemoved: (index, object) => {
+            let idx = proxyModelArray.indexOf(object);
+            if (idx > -1) proxyModelArray.splice(idx, 1);
+        }
+
     }
 
     state: dataMenu[currentMenuIndex].name
@@ -1412,7 +1482,25 @@ FocusScope {
                 }
             }
         );
+        if (genreCollection !== 1) {
+            types.push('Genre');
+        }
+        if (releaseYearCollection !== 1) {
+            types.push('Release Year');
+        }
         return Array.from(new Set(types));
+    }
+
+    function uniqueGameValues(fieldName) {
+        const set = new Set();
+        api.allGames.toVarArray().forEach(game => {
+            if (typeof game[fieldName] === "object" && game[fieldName] !== null) {
+                game[fieldName].forEach(v => set.add(v));
+            } else {
+                set.add(game[fieldName]);
+            }
+        });
+        return [...set.values()].sort().reverse();
     }
 
     function lightenDarkenColor(col,amt) {

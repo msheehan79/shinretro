@@ -12,7 +12,7 @@ FocusScope {
     readonly property var sortLabels: {'sortTitle':'Title', 'release':'Release Date', 'rating':'Rating', 'genre':'Genre', 'lastPlayed':'Last Played', 'favorite':'Favorite', 'custom':'Custom'}
     readonly property string sortField: sortFields[sortIndex]
     readonly property string collectionType: currentCollection.extra.collectiontype !== undefined ? currentCollection.extra.collectiontype.toString() : 'System'
-    readonly property var customSystemLogoCategories: ['Custom', 'Series']
+    readonly property var customSystemLogoCategories: ['Custom', 'Series', 'Genre', 'Release Year']
     readonly property bool customCollection: customSystemLogoCategories.includes(collectionType)
     readonly property string systemName: (currentGame !== null && dataConsoles[currentGame.extra.system] !== undefined) ? dataConsoles[currentGame.extra.system].fullName : ""
 
