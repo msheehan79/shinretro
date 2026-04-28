@@ -1085,6 +1085,10 @@ FocusScope {
         categories.forEach(cat => {
             if ((genreCollection !== 1 && cat.field == "genreList") || (releaseYearCollection !== 1 && cat.field == "releaseYear")) {
                 let values = uniqueGameValues(cat.field);
+                // If '0' shows up in the release year values, remove it
+                if (values.indexOf(0) !== -1) {
+                    values.splice(values.indexOf(0), 1);
+                }
                 values.forEach(v => {
                     result.push({ "val": v, "type": cat.type, "filter": cat.filter });
                 });
