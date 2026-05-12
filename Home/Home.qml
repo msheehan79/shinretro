@@ -242,7 +242,7 @@ FocusScope {
                     if (api.keys.isAccept(event)) {
                         event.accepted = true;
                         if (!currentGame.missing) {
-                            sfxPlay.play();
+                            playPlaySound();
                             api.memory.set("currentMenuIndex", currentMenuIndex);
                             api.memory.set('currentGame', currentGame);
                             currentGame.launch();
@@ -276,7 +276,7 @@ FocusScope {
             text: ( favorites.focus ) ? "<b>"+dataText[lang].home_favorites+"</b>" : dataText[lang].home_favorites
             font {
                 family: robotoSlabLight.name
-                pixelSize: vpx(22  * fontScalingFactor)
+                pixelSize: vpx(22 * fontScalingFactor)
             }
             color: colorScheme[theme].text
         }
