@@ -110,64 +110,6 @@ FocusScope {
         ]
     }
 
-    SortFilterProxyModel {
-        id: allFavoritesFiltered
-        sourceModel: api.allGames
-        filters: [
-            ValueFilter { roleName: "favorite"; value: true; },
-            RegExpFilter {
-                roleName: "title"
-                pattern: filter.withTitle
-                caseSensitivity: Qt.CaseInsensitive
-                enabled: filter.withTitle
-            },
-            RangeFilter {
-                roleName: "players"
-                minimumValue: 2
-                enabled: filter.withMultiplayer
-            },
-            ValueFilter {
-                roleName: "favorite"
-                value: true
-                enabled: filter.withFavorite
-            },
-            ValueFilter {
-                roleName: "missing"
-                value: false
-                enabled: filter.withMissing
-            }
-        ]
-    }
-
-    SortFilterProxyModel {
-        id: lastPlayedFiltered
-        sourceModel: api.allGames
-        sorters: RoleSorter { roleName: "lastPlayed"; sortOrder: Qt.DescendingOrder; }
-        filters: [
-            RegExpFilter {
-                roleName: "title"
-                pattern: filter.withTitle
-                caseSensitivity: Qt.CaseInsensitive
-                enabled: filter.withTitle
-            },
-            RangeFilter {
-                roleName: "players"
-                minimumValue: 2
-                enabled: filter.withMultiplayer
-            },
-            ValueFilter {
-                roleName: "favorite"
-                value: true
-                enabled: filter.withFavorite
-            },
-            ValueFilter {
-                roleName: "missing"
-                value: false
-                enabled: filter.withMissing
-            }
-        ]
-    }
-
     Behavior on focus {
         ParallelAnimation {
             PropertyAnimation {
