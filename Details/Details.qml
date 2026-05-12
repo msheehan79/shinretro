@@ -488,12 +488,7 @@ FocusScope {
 
         if (api.keys.isAccept(event)) {
             event.accepted = true;
-            playPlaySound();
-            if (currentGame !== null && !currentGame.missing) {
-                saveCurrentState(currentIndex)
-                api.memory.set('currentGame', currentGame);
-                currentGame.launch();
-            }
+            handleLaunch(currentCollection, currentIndex);
         }
 
         if (api.keys.isFilters(event)) {

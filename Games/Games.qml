@@ -674,7 +674,7 @@ FocusScope {
                         event.accepted = true;
                         playAcceptSound();
                         details.gameData = currentGame
-                        details.currentIndex = currentGameIndex
+                        details.currentIndex = filteredGames.mapToSource(currentGameIndex)
                         currentMenuIndex = 4;
                         return;
                     }
@@ -908,14 +908,7 @@ FocusScope {
     }
 
     function findCurrentGameFromProxy(idx, collection) {
-        // Last Played collection uses 2 filters chained together
-        if (collection.shortName == "lastplayed") {
-            return api.allGames.get(lastPlayedFiltered.mapToSource(idx));
-        } else if (collection.shortName == "favorites") {
-            return api.allGames.get(allFavoritesFiltered.mapToSource(idx));
-        } else {
-            return currentCollection.games.get(filteredGames.mapToSource(idx))
-        }
+        return currentCollection.games.get(filteredGames.mapToSource(idx))
     }
 
     function getCollectionSortValue(gameData, collName) {

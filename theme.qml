@@ -1058,6 +1058,11 @@ FocusScope {
         id: allFavorites
         sourceModel: api.allGames
         filters: ValueFilter { roleName: "favorite"; value: true; }
+
+        function getGameObject(proxyIndex) {
+            let sourceIndex = allFavorites.mapToSource(proxyIndex);
+            return allFavorites.sourceModel.get(sourceIndex);
+        }
     }
 
     SortFilterProxyModel {
@@ -1070,6 +1075,12 @@ FocusScope {
         id: lastPlayed
         sourceModel: lastPlayedBase
         filters: IndexFilter { maximumIndex: 49; }
+
+        function getGameObject(proxyIndex) {
+            let baseIndex = lastPlayed.mapToSource(proxyIndex);
+            let sourceIndex = lastPlayedBase.mapToSource(baseIndex);
+            return api.allGames.get(sourceIndex);
+        }
     }
 
     // Define dynamic Genre and Release Year collections
@@ -1103,15 +1114,20 @@ FocusScope {
         asynchronous: true
 
         delegate: Item {
-            // modelData is an object: { val, type, filter }
             property var name: modelData.val
             property var shortName: modelData.val.toString().toLowerCase().replace(/\s/g, '')
             property var type: modelData.type
 
             property var games: SortFilterProxyModel {
+                id: proxy
                 sourceModel: api.allGames
                 filterRoleName: modelData.filter
                 filterPattern: modelData.val.toString()
+
+                function getGameObject(proxyIndex) {
+                    let sourceIndex = proxy.mapToSource(proxyIndex);
+                    return proxy.sourceModel.get(sourceIndex);
+                }
             }
         }
 
@@ -1505,6 +1521,22 @@ FocusScope {
             }
         });
         return [...set.values()].sort().reverse();
+    }
+
+    function handleLaunch(collection, index) {
+        let currentGame;
+        if (typeof collection.games.getGameObject === "function") {
+            currentGame = collection.games.getGameObject(index);
+        } else {
+            currentGame = collection.games.get(index);
+        }
+
+        if (currentGame && currentGame.launch && !currentGame.missing) {
+            playPlaySound();
+            saveCurrentState(index);
+            api.memory.set('currentGame', currentGame);
+            currentGame.launch();
+        }
     }
 
     function lightenDarkenColor(col,amt) {
