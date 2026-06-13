@@ -478,7 +478,11 @@ FocusScope {
     }
 
     Component.onCompleted: {
-        gameData = api.memory.get("currentGame")
+        gameData = api.memory.get("currentGame");
+        let savedIndex = api.memory.get("currentIndex");
+        if (savedIndex !== undefined) {
+            currentIndex = savedIndex;
+        }
     }
 
     Keys.onPressed: {

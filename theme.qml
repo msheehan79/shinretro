@@ -1535,6 +1535,7 @@ FocusScope {
             playPlaySound();
             saveCurrentState(index);
             api.memory.set('currentGame', currentGame);
+            api.memory.set('currentIndex', index);
             currentGame.launch();
         }
     }
